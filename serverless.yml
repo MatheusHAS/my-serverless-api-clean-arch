@@ -1,0 +1,30 @@
+service: ${env:SERVICE_DEPLOY_NAME}
+frameworkVersion: '3'
+
+custom:
+  dotenv:
+    path: ./environment/
+  stages:
+    - production
+    - development
+  SERVICE_NAMESPACE: ${opt:STAGE, 'development'}-serverless-api
+  AWS_REGION_NAME: us-east-1
+
+provider:
+  name: aws
+  runtime: nodejs16.x
+  stage: development
+  region: ${self:custom.AWS_REGION_NAME}
+  environment:
+    SERVICE_DEPLOY_NAME: ${env:SERVICE_DEPLOY_NAME}
+    JWT_SECRET_KEY: ${env:JWT_SECRET_KEY}
+    MONGODB_URI: ${env:MONGODB_URI}
+
+functions:
+  - ${file(./routes.yml)}
+
+plugins:
+  - serverless-plugin-typescript
+  - serverless-offline
+  - serverless-tscpaths
+  - serverless-dotenv-plugin
