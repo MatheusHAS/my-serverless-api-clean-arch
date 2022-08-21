@@ -1,4 +1,4 @@
-import { EntityDuplicatedError } from '@/core/common/error/entity-already-exist.error';
+import { EntityDuplicatedError } from '@/core/common/error/entity-duplicated.error';
 import { IRepository } from '@/core/common/repository.interface';
 import { IUserEntity } from './user-entity.interface';
 
