@@ -1,7 +1,7 @@
-export class EntityDuplicatedError extends Error {
-  readonly statusCode = 400;
+import { CommonError } from './common.error';
 
+export class EntityDuplicatedError extends CommonError {
   constructor(message: string) {
-    super(`[Entity Duplicated]: ${message}`);
+    super(400, null, `[Entity Duplicated]: ${message}`);
   }
 }
