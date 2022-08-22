@@ -5,8 +5,11 @@
   "main": "",
   "scripts": {
     "start:dev": "npm run load:env:dev -- sls offline --stage development",
+    "start:prd": "npm run load:env:prd -- sls offline --stage production",
+    "deploy:dev": "npm run load:env:dev -- sls deploy --stage development",
+    "deploy:prd": "npm run load:env:prd -- sls deploy --stage production",
     "load:env:dev": "dotenv -e ./environment/.env.development",
-    "deploy:dev": "npm run load:env:dev -- sls deploy --stage development"
+    "load:env:prd": "dotenv -e ./environment/.env.production"
   },
   "repository": {
     "type": "git",
