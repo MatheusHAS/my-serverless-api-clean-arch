@@ -1,0 +1,6 @@
+register:
+  handler: ./src/application/api/http-rest/handler/user-handler.register
+  events:
+    - http:
+        path: register
+        method: post

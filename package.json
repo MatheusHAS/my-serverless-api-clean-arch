@@ -1,0 +1,46 @@
+{
+  "name": "my-serverless-api-clean-arch",
+  "version": "0.0.1",
+  "description": "A simple api using serverless framework, typescript and mongodb with Clean Archtecture",
+  "main": "",
+  "scripts": {
+    "start:dev": "npm run load:env:dev -- sls offline --stage development",
+    "start:prd": "npm run load:env:prd -- sls offline --stage production",
+    "deploy:dev": "npm run load:env:dev -- sls deploy --stage development",
+    "deploy:prd": "npm run load:env:prd -- sls deploy --stage production",
+    "load:env:dev": "dotenv -e ./environment/.env.development",
+    "load:env:prd": "dotenv -e ./environment/.env.production"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MatheusHAS/my-serverless-api-clean-arch.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MatheusHAS/my-serverless-api-clean-arch/issues"
+  },
+  "homepage": "https://github.com/MatheusHAS/my-serverless-api-clean-arch#readme",
+  "devDependencies": {
+    "@types/aws-lambda": "^8.10.102",
+    "@types/bcrypt": "^5.0.0",
+    "dotenv": "^16.0.1",
+    "dotenv-cli": "^6.0.0",
+    "prettier": "^2.7.1",
+    "serverless-dotenv-plugin": "^4.0.2",
+    "serverless-offline": "^9.2.3",
+    "serverless-plugin-typescript": "^2.1.2",
+    "serverless-tscpaths": "0.0.7",
+    "typescript": "^4.7.4"
+  },
+  "dependencies": {
+    "@middy/core": "^3.2.0",
+    "@middy/http-error-handler": "^3.2.0",
+    "aws-lambda": "^1.0.7",
+    "bcrypt": "^5.0.1",
+    "mongoose": "^6.5.2",
+    "reflect-metadata": "^0.1.13",
+    "serverless": "^3.22.0"
+  }
+}
