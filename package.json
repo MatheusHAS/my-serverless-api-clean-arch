@@ -1,11 +1,12 @@
 {
   "name": "my-serverless-api-clean-arch",
-  "version": "1.0.0",
+  "version": "0.0.1",
   "description": "A simple api using serverless framework, typescript and mongodb with Clean Archtecture",
-  "main": "index.js",
+  "main": "",
   "scripts": {
     "start:dev": "npm run load:env:dev -- sls offline --stage development",
-    "load:env:dev": "dotenv -e ./environment/.env.development"
+    "load:env:dev": "dotenv -e ./environment/.env.development",
+    "deploy:dev": "npm run load:env:dev -- sls deploy --stage development"
   },
   "repository": {
     "type": "git",
@@ -33,7 +34,6 @@
   "dependencies": {
     "@middy/core": "^3.2.0",
     "@middy/http-error-handler": "^3.2.0",
-    "@middy/http-response-serializer": "^3.2.0",
     "aws-lambda": "^1.0.7",
     "bcrypt": "^5.0.1",
     "mongoose": "^6.5.2",
